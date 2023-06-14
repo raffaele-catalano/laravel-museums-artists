@@ -29,7 +29,7 @@ class ArtistsTableSeeder extends Seeder
             $new_artist->death_date = $faker->date();
             $new_artist->gender = $faker->word();
             $new_artist->type = $faker->randomElement(['Sculptor', 'Painter', 'Paintress']); ;
-            $new_artist->slug = Artist::generateSlug($new_artist->name . $new_artist->lastname);
+            $new_artist->slug = Artist::generateSlug($new_artist->name . '-' . $new_artist->lastname);
 
             $new_artist->save();
         }
