@@ -17,3 +17,6 @@ use App\Models\Artist;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
+
+Route::resource('artists', ArtistController::class);
+

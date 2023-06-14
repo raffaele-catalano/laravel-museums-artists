@@ -4,7 +4,7 @@
             <a href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item m-2">
-            <a href="#">Lista Artisti</a>
+            <a href="{{ route('artists.index') }}">Lista Artisti</a>
         </li>
         <li class="nav-item m-2">
             <a href="#">Lista Musei</a>
