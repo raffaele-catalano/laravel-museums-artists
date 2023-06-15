@@ -4,7 +4,7 @@
     <main>
         <h2 class="text-center my-4">Lista Artisti</h2>
 
-        <div class="container w-75">
+        <div class="container">
             <table class="table table-dark">
                 <thead>
                     <tr>
