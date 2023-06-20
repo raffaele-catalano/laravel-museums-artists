@@ -5,22 +5,22 @@
 <main>
     <h2 class="text-center my-4">Lista Opere d'Arte</h2>
 
-    <div class="container">
-        <table class="table table-dark">
+    <div class="container d-flex justify-content-center">
+        <table class="table table-dark w-75">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Azioni</th>
+                    {{-- <th scope="col">ID</th> --}}
+                    <th scope="col" class="col-5">Nome</th>
+                    <th scope="col" class="col-3">Data</th>
+                    <th scope="col" class="col-2">Azioni</th>
                 </tr>
             </thead>
-            
+
             <tbody>
                 @foreach ($artworks as $artwork )
                 <tr>
 
-                    <td>{{$artwork->id}}</td>
+                    {{-- <td>{{$artwork->id}}</td> --}}
                     <td>{{$artwork->name}}</td>
                     <td>{{$artwork->date}}</td>
 
