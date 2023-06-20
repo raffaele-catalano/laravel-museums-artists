@@ -32,7 +32,7 @@
                     {{-- <td>{{$museum->latitude}}</td> --}}
                     {{-- <td>{{$museum->longitude}}</td> --}}
                     <td>
-                        <a href="#" class="btn btn-primary">Vai</a>
+                        <a href="{{route('museums.show', $museum)}}" class="btn btn-primary">Vai</a>
                     </td>
                 </tr>
                 @endforeach

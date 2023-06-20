@@ -31,6 +31,6 @@ class MuseumsTableSeeder extends Seeder
             $new_museum->latitude = $faker->randomFloat(8, 20, 30);
             $new_museum->longitude = $faker->randomFloat(8, 20, 30);
             $new_museum->save();
+          }
         }
     }
-}
