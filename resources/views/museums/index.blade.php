@@ -40,9 +40,13 @@
                             <i class="fa-regular fa-pen-to-square"></i>
                         </a>
 
-                        <a href="#" class="btn btn-danger">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>
+                        <form action="#" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
