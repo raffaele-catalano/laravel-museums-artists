@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArtistRequest;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,11 @@ class ArtistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArtistRequest $request)
     {
         $form_data = $request->all();
+
+        $form_data['slug'] = Artist::generateSlug($form_data['lastname']);
 
         $new_artist = new Artist();
 
