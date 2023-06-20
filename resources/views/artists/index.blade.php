@@ -21,7 +21,7 @@
                             <td>{{ $artist->lastname }}</td>
                             {{-- <td>{{ $artist->gender }}</td> --}}
                             <td>
-                                <a href="#" class="btn btn-primary">Vai</a>
+                                <a href="#" class="btn btn-primary">Go To</a>
                             </td>
                         </tr>
                     @endforeach
