@@ -32,6 +32,7 @@
                     {{-- <td>{{$museum->latitude}}</td> --}}
                     {{-- <td>{{$museum->longitude}}</td> --}}
                     <td>
+
                         <a href="#" class="btn btn-primary">
                             <i class="fa-regular fa-eye"></i>
                         </a>
@@ -47,6 +48,9 @@
                                 <i class="fa-regular fa-trash-can"></i>
                             </button>
                         </form>
+
+                        <a href="{{route('museums.show', $museum)}}" class="btn btn-primary">Vai</a>
+
                     </td>
                 </tr>
                 @endforeach

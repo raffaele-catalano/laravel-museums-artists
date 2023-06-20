@@ -14,6 +14,9 @@
     {{-- Favicon --}}
     <link rel="shortcut icon" href="/icons8-museo-96.png" type="png">
 
+    {{-- CK Editor --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+    
     <!-- Styles -->
     @vite('resources/js/app.js')
 
