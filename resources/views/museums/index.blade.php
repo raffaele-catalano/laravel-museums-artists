@@ -32,7 +32,25 @@
                     {{-- <td>{{$museum->latitude}}</td> --}}
                     {{-- <td>{{$museum->longitude}}</td> --}}
                     <td>
-                        <a href="#" class="btn btn-primary">Vai</a>
+
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+
+                        <a href="#" class="btn btn-warning">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+
+                        <form action="#" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </form>
+
+                        <a href="{{route('museums.show', $museum)}}" class="btn btn-primary">Vai</a>
+
                     </td>
                 </tr>
                 @endforeach

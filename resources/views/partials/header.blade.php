@@ -13,7 +13,7 @@
             <a href="{{ route('artists.create') }}">Aggiungi un Artista</a>
         </li>
         <li class="nav-item m-2">
-            <a href="#">Aggiungi un Museo</a>
+            <a href="{{ route("museums.create") }}">Aggiungi un Museo</a>
         </li>
     </ul>
 </header>
