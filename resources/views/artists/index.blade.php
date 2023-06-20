@@ -4,6 +4,10 @@
     <main>
         <h2 class="text-center my-4">Lista Artisti</h2>
 
+        @if (session('deleted'))
+          <div class="alert alert-warning text-center">{{ session('deleted') }}</div>
+        @endif
+
         <div class="container">
             <table class="table table-dark">
                 <thead>
@@ -21,8 +25,6 @@
                             <td>{{ $artist->lastname }}</td>
                             {{-- <td>{{ $artist->gender }}</td> --}}
                             <td>
-                            
-                                <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">Vai</a>
 
                                 <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">
                                     <i class="fa-regular fa-eye"></i>
@@ -32,7 +34,7 @@
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
 
-                                <form action="{{ route('artists.destroy', $artist) }}" method="POST" class="d-inline">
+                                <form action="{{ route('artists.destroy', $artist) }}" method="POST" class="d-inline" onsubmit="return confirm('Sei sicuro di cancellare quest\'elemento?')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">

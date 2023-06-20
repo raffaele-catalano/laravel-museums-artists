@@ -88,6 +88,7 @@ class MuseumController extends Controller
      */
     public function destroy(Museum $museum)
     {
-        //
+      $museum->delete();
+      return redirect()->route('museums.index')->with('deleted', 'Elemento eliminato');
     }
 }
