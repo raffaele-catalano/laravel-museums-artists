@@ -32,7 +32,17 @@
                     {{-- <td>{{$museum->latitude}}</td> --}}
                     {{-- <td>{{$museum->longitude}}</td> --}}
                     <td>
-                        <a href="#" class="btn btn-primary">Vai</a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+
+                        <a href="#" class="btn btn-warning">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+
+                        <a href="#" class="btn btn-danger">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
                     </td>
                 </tr>
                 @endforeach
