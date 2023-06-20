@@ -25,7 +25,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        return view('artists.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $new_artist = new Artist();
+
+        $new_artist->fill($form_data);
+
+        $new_artist->save();
+
+        return redirect()->route('comics.show', $new_artist);
     }
 
     /**
