@@ -23,4 +23,17 @@ class Museum extends Model
         return $slug;
 }
 
+
+    protected $fillable = [
+        "name",
+        "nation",
+        "city",
+        "slug",
+        "address",
+        "web_site",
+        "photo",
+        "description",
+        "latitude",
+        "longitude",
+    ];
 }

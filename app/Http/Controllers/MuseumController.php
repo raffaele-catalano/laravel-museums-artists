@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Museum;
 use Illuminate\Http\Request;
+use App\Http\Requests\MuseumRequest;
+
 
 class MuseumController extends Controller
 {
@@ -34,12 +36,12 @@ class MuseumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MuseumRequest $request)
     {
         $form_data = $request->all();
         $new_museum = new Museum();
 
-
+        $form_data['slug'] = Museum::generateSlug($form_data['name']);
         $new_museum->fill($form_data);
         $new_museum->save();
 
