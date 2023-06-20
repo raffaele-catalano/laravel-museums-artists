@@ -21,6 +21,9 @@
                             <td>{{ $artist->lastname }}</td>
                             {{-- <td>{{ $artist->gender }}</td> --}}
                             <td>
+                            
+                                <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">Vai</a>
+
                                 <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
@@ -36,6 +39,7 @@
                                         <i class="fa-regular fa-trash-can"></i>
                                     </button>
                                 </form>
+
                             </td>
                         </tr>
                     @endforeach
