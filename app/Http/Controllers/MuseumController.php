@@ -25,7 +25,7 @@ class MuseumController extends Controller
      */
     public function create()
     {
-        //
+        return view("museums.create");
     }
 
     /**
@@ -36,7 +36,14 @@ class MuseumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $new_museum = new Museum();
+
+
+        $new_museum->fill($form_data);
+        $new_museum->save();
+
+        return redirect()->route("museums.show", $new_museum);
     }
 
     /**
