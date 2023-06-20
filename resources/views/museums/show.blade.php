@@ -1,10 +1,8 @@
 @extends('layout.main')
 
 @section('content')
-    <main>
+    <div class="container text-center">
         <h2 class="text-center my-4">Museo</h2>
-
-        <div class="container text-center">
 
           <div>
             <h2>Nome</h2>
@@ -41,21 +39,21 @@
             <p>{{$museum->longitude}}</p>
           </div>
 
-          <div>
-            <a href="{{route('museums.index')}}" class="btn btn-primary">Indietro</a>
-          </div>
+          <a href="{{route('museums.index')}}" class="btn btn-primary  my-2">
+             <i class="fa-solid fa-rotate-left"></i>
+          </a>
 
+          <a href="#" class="btn btn-warning">
+              <i class="fa-regular fa-pen-to-square"></i>
+          </a>
 
+          <form action="{{ route('museums.destroy', $museum) }}" method="POST" class="d-inline" onsubmit="return confirm('Sei sicuro di cancellare quest\'elemento?')">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger">
+                  <i class="fa-regular fa-trash-can"></i>
+              </button>
+          </form>
 
-
-
-
-
-
-
-        </div>
-
-
-
-    </main>
+    </div>
 @endsection

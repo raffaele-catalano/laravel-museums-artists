@@ -5,6 +5,10 @@
 <main>
     <h2 class="text-center my-4">Lista Musei</h2>
 
+    @if (session('deleted'))
+      <div class="alert alert-warning text-center">{{ session('deleted') }}</div>
+    @endif
+
     <div class="container">
         <table class="table table-dark">
             <thead>
@@ -33,7 +37,7 @@
                     {{-- <td>{{$museum->longitude}}</td> --}}
                     <td>
 
-                        <a href="#" class="btn btn-primary">
+                        <a href="{{route('museums.show', $museum)}}" class="btn btn-primary">
                             <i class="fa-regular fa-eye"></i>
                         </a>
 
@@ -41,15 +45,13 @@
                             <i class="fa-regular fa-pen-to-square"></i>
                         </a>
 
-                        <form action="#" method="POST" class="d-inline">
+                        <form action="{{ route('museums.destroy', $museum) }}" method="POST" class="d-inline" onsubmit="return confirm('Sei sicuro di cancellare quest\'elemento?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">
                                 <i class="fa-regular fa-trash-can"></i>
                             </button>
                         </form>
-
-                        <a href="{{route('museums.show', $museum)}}" class="btn btn-primary">Vai</a>
 
                     </td>
                 </tr>

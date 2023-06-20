@@ -13,5 +13,17 @@
         <a href="{{ route('artists.index') }}" class="btn btn-primary my-2">
             <i class="fa-solid fa-rotate-left"></i>
         </a>
+
+        <a href="#" class="btn btn-warning">
+          <i class="fa-regular fa-pen-to-square"></i>
+        </a>
+
+        <form action="{{ route('artists.destroy', $artist) }}" method="POST" class="d-inline" onsubmit="return confirm('Sei sicuro di cancellare quest\'elemento?')">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+        </form>
     </div>
 @endsection
