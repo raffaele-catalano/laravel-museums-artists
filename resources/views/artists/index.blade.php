@@ -21,7 +21,7 @@
                             <td>{{ $artist->lastname }}</td>
                             {{-- <td>{{ $artist->gender }}</td> --}}
                             <td>
-                                <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">Go To</a>
+                                <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">Vai</a>
                             </td>
                         </tr>
                     @endforeach
