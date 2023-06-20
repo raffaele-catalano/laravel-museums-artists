@@ -44,7 +44,7 @@ class ArtistController extends Controller
 
         $new_artist->save();
 
-        return redirect()->route('comics.show', $new_artist);
+        return redirect()->route('artists.show', $new_artist);
     }
 
     /**
