@@ -14,7 +14,8 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        //
+        $artworks = Artwork::all();
+        return view('artworks.index', compact('artworks'));
     }
 
     /**
