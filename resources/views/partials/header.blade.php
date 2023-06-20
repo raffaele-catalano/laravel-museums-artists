@@ -10,7 +10,7 @@
             <a href="{{ route('museums.index') }}">Lista Musei</a>
         </li>
         <li class="nav-item m-2">
-            <a href="#">Aggiungi un Artista</a>
+            <a href="{{ route('artists.create') }}">Aggiungi un Artista</a>
         </li>
         <li class="nav-item m-2">
             <a href="#">Aggiungi un Museo</a>
