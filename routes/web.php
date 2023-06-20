@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\MuseumController;
 use App\Models\Artist;
 
@@ -23,4 +24,4 @@ Route::resource('artists', ArtistController::class);
 
 Route::resource('museums', MuseumController::class);
 
-
+Route::resource('artworks', ArtworkController::class);
