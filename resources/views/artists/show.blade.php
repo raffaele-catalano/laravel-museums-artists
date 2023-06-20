@@ -10,6 +10,8 @@
         <span class="d-block my-2">Data di morte: {{ $artist->death_date }}</span>
         <span class="d-block my-2">Biografia:</span>
         <p>{{ $artist->biography }}</p>
-        <a href="{{ route('artists.index') }}" class="btn btn-primary my-2">Indietro</a>
+        <a href="{{ route('artists.index') }}" class="btn btn-primary my-2">
+            <i class="fa-solid fa-rotate-left"></i>
+        </a>
     </div>
 @endsection

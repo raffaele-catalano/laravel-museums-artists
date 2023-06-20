@@ -21,7 +21,25 @@
                             <td>{{ $artist->lastname }}</td>
                             {{-- <td>{{ $artist->gender }}</td> --}}
                             <td>
+                            
                                 <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">Vai</a>
+
+                                <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">
+                                    <i class="fa-regular fa-eye"></i>
+                                </a>
+
+                                <a href="#" class="btn btn-warning">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </a>
+
+                                <form action="{{ route('artists.destroy', $artist) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </button>
+                                </form>
+
                             </td>
                         </tr>
                     @endforeach
