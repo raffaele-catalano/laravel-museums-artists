@@ -2,19 +2,9 @@
 
 @section('content')
     <div class="container text-center">
-        <h2>{{ $artist->name . ' ' . $artist->lastname }}</h2>
-        <img src="{{ $artist->image }}" alt="">
-        <span class="d-block my-2">Tipo: {{ $artist->type }}</span>
-        <span class="d-block my-2">Genere: {{ $artist->gender }}</span>
-        <span class="d-block my-2">Data di nascita: {{ $artist->birth_date }}</span>
-        <span class="d-block my-2">Data di morte: {{ $artist->death_date }}</span>
-        <span class="d-block my-2">Biografia:</span>
-        <p>{{ $artist->biography }}</p>
-        <a href="{{ route('artists.index') }}" class="btn btn-primary my-2">
-            <i class="fa-solid fa-rotate-left"></i>
-        </a>
-
-        <a href="#" class="btn btn-warning">
+      <div class="container d-flex justify-content-center align-items-center mb-2">
+        <h2 class="fw-bold text-warning me-2">{{ $artist->name . ' ' . $artist->lastname }}</h2>
+        <a href="#" class="btn btn-warning mx-2">
           <i class="fa-regular fa-pen-to-square"></i>
         </a>
 
@@ -25,5 +15,17 @@
                 <i class="fa-regular fa-trash-can"></i>
             </button>
         </form>
+      </div>
+        <img src="{{ $artist->image }}" alt="" class="w-25">
+        <h5 class="my-2"><span class="text-primary">Gender:</span> {{ $artist->gender }}</h5>
+        <h5 class="my-2"><span class="text-primary">Biography:</span> {{ $artist->biography }}</h5>
+        <h5 class="my-2"><span class="text-primary">Birth Date:</span> {{ $artist->birth_date }}</h5>
+        <h5 class="my-2"><span class="text-primary">Death Date:</span> {{ $artist->death_date }}</h5>
+        <h5 class="my-2"><span class="text-primary">Type:</span> {{ $artist->type }}</h5>
+
+        <a href="{{ route('artists.index') }}" class="btn btn-primary my-2">
+            <i class="fa-solid fa-rotate-left"></i>
+        </a>
+
     </div>
 @endsection

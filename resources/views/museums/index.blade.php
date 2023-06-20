@@ -9,19 +9,19 @@
       <div class="alert alert-warning text-center">{{ session('deleted') }}</div>
     @endif
 
-    <div class="container">
-        <table class="table table-dark">
+    <div class="container d-flex justify-content-center">
+        <table class="table table-dark w-75">
             <thead>
                 <tr>
                     {{-- <th scope="col">#</th> --}}
-                    <th scope="col">Nome</th>
+                    <th scope="col" class="col-4">Name</th>
                     {{-- <th scope="col">Slug</th> --}}
-                    <th scope="col">Città</th>
-                    <th scope="col">Nazione</th>
+                    <th scope="col" class="col-3">City</th>
+                    <th scope="col" class="col-3">Nation</th>
                     {{-- <th scope="col">Address</th> --}}
                     {{-- <th scope="col">Latitude</th> --}}
                     {{-- <th scope="col">Longitude</th> --}}
-                    <th scope="col">Azioni</th>
+                    <th scope="col" class="col-2">Actions</th>
                 </tr>
             </thead>
             <tbody>
