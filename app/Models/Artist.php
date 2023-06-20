@@ -24,4 +24,16 @@ class Artist extends Model
 
         return $slug;
     }
+
+    protected $fillable = [
+        'name',
+        'lastname',
+        'image',
+        'biography',
+        'birth_date',
+        'death_date',
+        'gender',
+        'type',
+        'slug',
+    ];
 }
