@@ -30,7 +30,7 @@
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
 
-                                <a href="#" class="btn btn-warning">
+                                <a href="{{route('artists.edit', $artist)  }}" class="btn btn-warning">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
 
