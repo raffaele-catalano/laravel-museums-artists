@@ -25,7 +25,7 @@ class ArtworkController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,7 +36,9 @@ class ArtworkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $form_data = $request->all();
+      $new_artwork = new Artwork();
+      $new_artwork ->fill($form_data);
     }
 
     /**
@@ -47,7 +49,9 @@ class ArtworkController extends Controller
      */
     public function show(Artwork $artwork)
     {
-        //
+      $date = date_create($artwork->date);
+      $date_formatted = date_format($date, 'd/m/Y');
+        return view('artworks.show', compact('artwork', 'date_formatted'));
     }
 
     /**
@@ -58,7 +62,7 @@ class ArtworkController extends Controller
      */
     public function edit(Artwork $artwork)
     {
-        //
+        return view('artworks.edit', compact('artwork'));
     }
 
     /**
@@ -70,7 +74,12 @@ class ArtworkController extends Controller
      */
     public function update(Request $request, Artwork $artwork)
     {
-        //
+        $form_data = $request->all();
+
+        $artwork->update($form_data);
+
+        return redirect()->route('artworks.show', $artwork);
+
     }
 
     /**
@@ -81,6 +90,8 @@ class ArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        //
+      // dd($artwork);
+        $artwork->delete();
+        return redirect()->route('artworks.index')->with('deleted', " $artwork->name è stato eliminato correttamente"  );
     }
 }
