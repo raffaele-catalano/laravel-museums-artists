@@ -4,7 +4,7 @@
     <div class="container text-center">
       <div class="container d-flex justify-content-center align-items-center mb-2">
         <h2 class="fw-bold text-warning me-2">{{ $museum->name . ' ' . $museum->lastname }}</h2>
-        <a href="#" class="btn btn-warning mx-2">
+        <a href="{{ route('museums.edit', $museum) }}" class="btn btn-warning mx-2">
           <i class="fa-regular fa-pen-to-square"></i>
         </a>
 

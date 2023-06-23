@@ -79,7 +79,14 @@ class MuseumController extends Controller
      */
     public function update(Request $request, Museum $museum)
     {
-        //
+      $form_data = $request->all();
+
+      if($museum->name != $form_data['name']) {
+        $form_data['slug'] = Museum::generateSlug($form_data['name']);
+      }
+
+      $museum->update($form_data);
+      return redirect()->route('museums.show', $museum);
     }
 
     /**
