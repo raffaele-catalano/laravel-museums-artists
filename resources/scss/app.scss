@@ -2,18 +2,24 @@
 
 body {
   header {
+    font-family: 'Source Code Pro', monospace;
     li {
       background-color: $primary;
       border-radius: 20px;
       padding: 4px 6px;
-      transition: all .4s;
+      transition: all .3s;
       &:hover{
         transform: scale(1.1);
+        background-color: white;
+        a {
+          color: $primary;
+        }
       }
       a{
         list-style: none;
         text-decoration: none;
         color: white;
+        font-size: 0.9rem;
       }
     }
   }
