@@ -21,6 +21,7 @@ class ArtworksTableSeeder extends Seeder
             $new_artwork->name = $faker->sentence();
             $new_artwork->date = $faker->date();
             $new_artwork->image = $faker->imageUrl(640, 480, 'artwork', true);
+            $new_artwork->description = $faker->text();
             $new_artwork->save();
         }
     }

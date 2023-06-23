@@ -18,14 +18,19 @@
       </div>
         <img src="{{ $artwork->photo }}" alt="" class="w-25">
         <h5 class="my-2"><span class="text-primary">Name:</span> {{ $artwork->name }}</h5>
+
+        <div>
+          <img src="{{$artwork->image}}" alt="">
+        </div>
+
         <h5 class="my-2"><span class="text-primary">date:</span>
           @php
             $date = date_create($artwork->date);
-            @endphp
+          @endphp
             {{date_format($date, 'd/m/Y')  }}</h5>
 
-            <div>
-              <img src="{{$artwork->image}}" alt="">
+            <div class="description">
+              <h5 class="my-2"><span class="text-primary">Description:</span> {{ $artwork->name }}</h5>
             </div>
 
         <a href="{{ route('artworks.index') }}" class="btn btn-primary my-2">
