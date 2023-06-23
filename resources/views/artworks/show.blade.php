@@ -24,6 +24,10 @@
             @endphp
             {{date_format($date, 'd/m/Y')  }}</h5>
 
+            <div>
+              <img src="{{$artwork->image}}" alt="">
+            </div>
+
         <a href="{{ route('artworks.index') }}" class="btn btn-primary my-2">
             <i class="fa-solid fa-rotate-left"></i>
         </a>

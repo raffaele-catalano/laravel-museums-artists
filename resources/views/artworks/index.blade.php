@@ -24,13 +24,14 @@
                     <td>{{$artwork->name}}</td>
                     <td>{{$artwork->date}}</td>
 
+
                     <td>
 
                         <a href="{{route('artworks.show', $artwork)}}" class="btn btn-primary">
                             <i class="fa-regular fa-eye"></i>
                         </a>
 
-                        <a href="#" class="btn btn-warning">
+                        <a href="{{route('artworks.edit', $artwork)}}" class="btn btn-warning">
                             <i class="fa-regular fa-pen-to-square"></i>
                         </a>
 
