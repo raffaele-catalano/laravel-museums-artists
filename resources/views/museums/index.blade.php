@@ -41,7 +41,7 @@
                             <i class="fa-regular fa-eye"></i>
                         </a>
 
-                        <a href="#" class="btn btn-warning">
+                        <a href="{{ route('museums.edit', $museum) }}" class="btn btn-warning">
                             <i class="fa-regular fa-pen-to-square"></i>
                         </a>
 

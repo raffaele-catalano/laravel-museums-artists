@@ -9,12 +9,13 @@
         @endif
 
         <div class="container d-flex justify-content-center">
-            <table class="table table-dark w-75">
+            <table class="table table-dark">
                 <thead>
                     <tr>
                         <th scope="col" class="col-3">Name</th>
                         <th scope="col" class="col-3">Surname</th>
-                        <th scope="col" class="col-3">Type</th>
+                        <th scope="col" class="col-2">Type</th>
+                        <th scope="col" class="col-2">Artworks</th>
                         <th scope="col" class="col-2">Actions</th>
                     </tr>
                 </thead>
@@ -24,13 +25,15 @@
                             <td>{{ $artist->name }}</td>
                             <td>{{ $artist->lastname }}</td>
                             <td>{{ $artist->type }}</td>
+                            {{-- TODO: fix !!!!! --}}
+                            <td>{{ $artist->artwork->id }}</td>
                             <td>
 
                                 <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
 
-                                <a href="#" class="btn btn-warning">
+                                <a href="{{route('artists.edit', $artist)  }}" class="btn btn-warning">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
 

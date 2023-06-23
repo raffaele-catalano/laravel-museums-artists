@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Museum;
 use Illuminate\Http\Request;
 use App\Http\Requests\MuseumRequest;
+use Illuminate\Support\Facades\Storage;
 
 
 class MuseumController extends Controller
@@ -39,9 +40,15 @@ class MuseumController extends Controller
     public function store(MuseumRequest $request)
     {
         $form_data = $request->all();
-        $new_museum = new Museum();
-
         $form_data['slug'] = Museum::generateSlug($form_data['name']);
+
+        if (array_key_exists('image', $form_data)) {
+          $form_data['image_name'] = $request->file('image')->getClientOriginalName();
+          $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
+        }
+
+
+        $new_museum = new Museum();
         $new_museum->fill($form_data);
         $new_museum->save();
 
@@ -67,7 +74,7 @@ class MuseumController extends Controller
      */
     public function edit(Museum $museum)
     {
-        //
+        return view('museums.edit', compact('museum'));
     }
 
     /**
@@ -79,7 +86,14 @@ class MuseumController extends Controller
      */
     public function update(Request $request, Museum $museum)
     {
-        //
+      $form_data = $request->all();
+
+      if($museum->name != $form_data['name']) {
+        $form_data['slug'] = Museum::generateSlug($form_data['name']);
+      }
+
+      $museum->update($form_data);
+      return redirect()->route('museums.show', $museum);
     }
 
     /**

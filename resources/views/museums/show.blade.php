@@ -4,7 +4,7 @@
     <div class="container text-center">
       <div class="container d-flex justify-content-center align-items-center mb-2">
         <h2 class="fw-bold text-warning me-2">{{ $museum->name . ' ' . $museum->lastname }}</h2>
-        <a href="#" class="btn btn-warning mx-2">
+        <a href="{{ route('museums.edit', $museum) }}" class="btn btn-warning mx-2">
           <i class="fa-regular fa-pen-to-square"></i>
         </a>
 
@@ -16,7 +16,7 @@
             </button>
         </form>
       </div>
-        <img src="{{ $museum->photo }}" alt="" class="w-25">
+        <img src="{{ asset('storage/' . $museum->image_path) ?? $museum->photo }}" alt="" class="w-25">
         <h5 class="my-2"><span class="text-primary">Nation:</span> {{ $museum->nation }}</h5>
         <h5 class="my-2"><span class="text-primary">City:</span> {{ $museum->city }}</h5>
         <h5 class="my-2"><span class="text-primary">Address:</span> {{ $museum->address }}</h5>

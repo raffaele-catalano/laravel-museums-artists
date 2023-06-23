@@ -20,8 +20,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([ArtistsTableSeeder::class]);
-        $this->call([MuseumsTableSeeder::class]);
-        $this->call([ArtworksTableSeeder::class]);
+        $this->call([
+          ArtworksTableSeeder::class,
+          ArtistsTableSeeder::class,
+          MuseumsTableSeeder::class
+        ]);
     }
 }

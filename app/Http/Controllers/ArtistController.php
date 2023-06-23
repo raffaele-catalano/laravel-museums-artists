@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ArtistRequest;
 use App\Models\Artist;
+use App\Models\Artwork;
 use Illuminate\Http\Request;
 
 class ArtistController extends Controller
@@ -16,6 +17,7 @@ class ArtistController extends Controller
     public function index()
     {
         $artists = Artist::all();
+
         return view('artists.index', compact('artists'));
     }
 
@@ -39,7 +41,7 @@ class ArtistController extends Controller
     {
         $form_data = $request->all();
 
-        $form_data['slug'] = Artist::generateSlug($form_data['lastname']);
+        $form_data['slug'] = Artist::generateSlug($form_data['name'] . ' ' . $form_data['lastname']);
 
         $new_artist = new Artist();
 
@@ -69,7 +71,7 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        //
+        return view('artists.edit', compact('artist'));
     }
 
     /**
@@ -81,7 +83,14 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-        //
+        $form_data = $request->all();
+
+        if($artist->name != $form_data['name'] || $artist->lastname != $form_data['lastname']) {
+          $form_data['slug'] = Artist::generateSlug($form_data['name'] . ' ' . $form_data['lastname']);
+        }
+
+        $artist->update($form_data);
+        return redirect()->route('artists.show', $artist);
     }
 
     /**
