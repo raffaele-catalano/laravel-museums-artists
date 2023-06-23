@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ArtistRequest;
 use App\Models\Artist;
+use App\Models\Artwork;
 use Illuminate\Http\Request;
 
 class ArtistController extends Controller
@@ -16,6 +17,7 @@ class ArtistController extends Controller
     public function index()
     {
         $artists = Artist::all();
+
         return view('artists.index', compact('artists'));
     }
 
