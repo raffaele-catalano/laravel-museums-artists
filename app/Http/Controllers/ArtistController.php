@@ -39,7 +39,7 @@ class ArtistController extends Controller
     {
         $form_data = $request->all();
 
-        $form_data['slug'] = Artist::generateSlug($form_data['lastname']);
+        $form_data['slug'] = Artist::generateSlug($form_data['name'] . ' ' . $form_data['lastname']);
 
         $new_artist = new Artist();
 
@@ -81,7 +81,14 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-        //
+        $form_data = $request->all();
+
+        if($artist->name != $form_data['name'] || $artist->lastname != $form_data['lastname']) {
+          $form_data['slug'] = Artist::generateSlug($form_data['name'] . ' ' . $form_data['lastname']);
+        }
+
+        $artist->update($form_data);
+        return redirect()->route('artists.show', $artist);
     }
 
     /**
