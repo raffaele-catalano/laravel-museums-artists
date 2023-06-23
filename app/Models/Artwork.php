@@ -15,8 +15,9 @@ class Artwork extends Model
       'date',
       'description'
   ];
+
+  public function projects() {
+    return $this->hasMany(Project::class);
+  }
 }
-    public function artists() {
-        return $this->hasMany(Artist::class);
-    }
-}
+

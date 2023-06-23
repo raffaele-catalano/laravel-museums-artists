@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('museums', function (Blueprint $table) {
             $table->string('image_name')->after('web_site');
-            $table->string('image_path')->after('image_name');
+            $table->string('image_path')->after('web_site');
         });
     }
 

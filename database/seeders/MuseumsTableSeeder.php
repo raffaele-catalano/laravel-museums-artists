@@ -27,6 +27,8 @@ class MuseumsTableSeeder extends Seeder
             $new_museum->address = $faker->streetAddress();
             $new_museum->web_site = $faker->url();
             $new_museum->photo = $faker->imageUrl(640, 480, 'museum', true);
+            $new_museum->image_name = '';
+            $new_museum->image_path = '';
             $new_museum->description = $faker->text();
             $new_museum->latitude = $faker->randomFloat(8, 20, 30);
             $new_museum->longitude = $faker->randomFloat(8, 20, 30);
