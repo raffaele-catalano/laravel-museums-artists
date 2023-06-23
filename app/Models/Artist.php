@@ -36,4 +36,8 @@ class Artist extends Model
         'type',
         'slug',
     ];
+
+    public function artwork() {
+      return $this->belongsTo(Artwork::class);
+  }
 }
