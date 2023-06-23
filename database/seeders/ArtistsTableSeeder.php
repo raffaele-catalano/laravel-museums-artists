@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Artist;
+use App\Models\Artwork;
 use Faker\Generator as Faker;
 
 class ArtistsTableSeeder extends Seeder
@@ -21,6 +22,7 @@ class ArtistsTableSeeder extends Seeder
 
             $new_artist = new Artist();
 
+            $new_artist->artwork_id = Artwork::inRandomOrder()->first()->id;
             $new_artist->name = $faker->firstName();
             $new_artist->lastname = $faker->lastName();
             $new_artist->image = $faker->imageUrl(640, 480, 'artist', true);
