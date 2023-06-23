@@ -68,7 +68,8 @@
         <input
         type="file"
         class="form-control"
-        id="photo" name="photo"
+        id="photo"
+        name="image"
         placeholder="inserisci l'immagine"
         value="{{old("photo")}}"
         >

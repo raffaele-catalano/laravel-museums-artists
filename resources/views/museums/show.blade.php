@@ -16,7 +16,7 @@
             </button>
         </form>
       </div>
-        <img src="{{ $museum->photo }}" alt="" class="w-25">
+        <img src="{{ asset('storage/' . $museum->image_path) ?? $museum->photo }}" alt="" class="w-25">
         <h5 class="my-2"><span class="text-primary">Nation:</span> {{ $museum->nation }}</h5>
         <h5 class="my-2"><span class="text-primary">City:</span> {{ $museum->city }}</h5>
         <h5 class="my-2"><span class="text-primary">Address:</span> {{ $museum->address }}</h5>
