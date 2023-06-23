@@ -47,7 +47,9 @@ class ArtworkController extends Controller
      */
     public function show(Artwork $artwork)
     {
-        //
+      $date = date_create($artwork->date);
+      $date_formatted = date_format($date, 'd/m/Y');
+        return view('artworks.show', compact('artwork', 'date_formatted'));
     }
 
     /**

@@ -26,7 +26,7 @@
 
                     <td>
 
-                        <a href="#" class="btn btn-primary">
+                        <a href="{{route('artworks.show', $artwork)}}" class="btn btn-primary">
                             <i class="fa-regular fa-eye"></i>
                         </a>
 
