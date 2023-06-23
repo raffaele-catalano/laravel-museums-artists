@@ -30,7 +30,7 @@
             {{date_format($date, 'd/m/Y')  }}</h5>
 
             <div class="description">
-              <h5 class="my-2"><span class="text-primary">Description:</span> {{ $artwork->name }}</h5>
+              <h5 class="my-2"><span class="text-primary">Description:</span> {{ $artwork->description }}</h5>
             </div>
 
         <a href="{{ route('artworks.index') }}" class="btn btn-primary my-2">

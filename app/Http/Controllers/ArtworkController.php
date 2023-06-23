@@ -36,7 +36,9 @@ class ArtworkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $form_data = $request->all();
+      $new_artwork = new Artwork();
+      $new_artwork ->fill($form_data);
     }
 
     /**
@@ -72,7 +74,12 @@ class ArtworkController extends Controller
      */
     public function update(Request $request, Artwork $artwork)
     {
-        //
+        $form_data = $request->all();
+
+        $artwork->update($form_data);
+
+        return redirect()->route('artworks.show', $artwork);
+
     }
 
     /**
