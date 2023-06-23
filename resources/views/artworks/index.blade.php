@@ -35,7 +35,11 @@
                             <i class="fa-regular fa-pen-to-square"></i>
                         </a>
 
-                        <form action="#" method="POST" class="d-inline">
+                        <form
+                        action="{{route('artworks.destroy', $artwork)}}"
+                        method="POST"
+                        class="d-inline"
+                        onsubmit="return confirm('confermi l\'eliminazione di {{$artwork->name}} ?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">

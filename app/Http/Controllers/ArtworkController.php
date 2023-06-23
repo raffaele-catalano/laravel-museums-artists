@@ -25,7 +25,7 @@ class ArtworkController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -90,6 +90,8 @@ class ArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        //
+      // dd($artwork);
+        $artwork->delete();
+        return redirect()->route('artworks.index')->with('deleted', " $artwork->name è stato eliminato correttamente"  );
     }
 }
