@@ -31,6 +31,8 @@ class Museum extends Model
         "slug",
         "address",
         "web_site",
+        "image_name",
+        "image_path",
         "photo",
         "description",
         "latitude",

@@ -2,7 +2,7 @@
 
 @section("content")
 
-<form action="{{route("museums.store")}}" method="POST" class="scroll">
+<form action="{{route("museums.store")}}" method="POST" class="scroll" enctype="multipart/form-data">
     @csrf
 
     @if ($errors->any())
