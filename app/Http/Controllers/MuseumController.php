@@ -67,7 +67,7 @@ class MuseumController extends Controller
      */
     public function edit(Museum $museum)
     {
-        //
+        return view('museums.edit', compact('museum'));
     }
 
     /**
