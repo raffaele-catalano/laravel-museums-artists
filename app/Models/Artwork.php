@@ -16,8 +16,8 @@ class Artwork extends Model
       'description'
   ];
 
-  public function projects() {
-    return $this->hasMany(Project::class);
+  public function artist() {
+    return $this->belongsTo(Artist::class);
   }
 }
 

@@ -18,11 +18,9 @@ class ArtistsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for ($i=0; $i < 10; $i++) {
+        for ($i=0; $i < 30; $i++) {
 
             $new_artist = new Artist();
-
-            $new_artist->artwork_id = Artwork::inRandomOrder()->first()->id;
             $new_artist->name = $faker->firstName();
             $new_artist->lastname = $faker->lastName();
             $new_artist->image = $faker->imageUrl(640, 480, 'artist', true);
@@ -32,8 +30,13 @@ class ArtistsTableSeeder extends Seeder
             $new_artist->gender = $faker->word();
             $new_artist->type = $faker->randomElement(['Sculptor', 'Painter', 'Paintress']); ;
             $new_artist->slug = Artist::generateSlug($new_artist->name . '-' . $new_artist->lastname);
-
             $new_artist->save();
+
+            $artworks = Artwork::inRandomOrder()->limit(rand(1, 5))->get();
+            foreach ($artworks as $artwork) {
+              $artwork->artist_id = $new_artist->id;
+              $artwork->save();
+            }
         }
     }
 }
