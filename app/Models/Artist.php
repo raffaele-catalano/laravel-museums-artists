@@ -26,7 +26,7 @@ class Artist extends Model
     }
 
     protected $fillable = [
-        'artwork_id',
+
         'name',
         'lastname',
         'image',
@@ -38,7 +38,7 @@ class Artist extends Model
         'slug',
     ];
 
-    public function artwork() {
-      return $this->belongsTo(Artwork::class);
+    public function artworks() {
+      return $this->hasMany(Artwork::class);
   }
 }

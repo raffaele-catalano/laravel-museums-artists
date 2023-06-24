@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
+          MuseumsTableSeeder::class,
           ArtworksTableSeeder::class,
-          ArtistsTableSeeder::class,
-          MuseumsTableSeeder::class
+          ArtistsTableSeeder::class
         ]);
     }
 }

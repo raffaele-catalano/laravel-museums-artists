@@ -25,8 +25,7 @@
                             <td>{{ $artist->name }}</td>
                             <td>{{ $artist->lastname }}</td>
                             <td>{{ $artist->type }}</td>
-                            {{-- TODO: fix !!!!! --}}
-                            <td>{{ $artist->artwork->id }}</td>
+                            <td>{{ $artist->artworks->count() }}</td>
                             <td>
 
                                 <a href="{{ route('artists.show', $artist) }}" class="btn btn-primary">

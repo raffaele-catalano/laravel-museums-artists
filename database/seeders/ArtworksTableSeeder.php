@@ -16,7 +16,7 @@ class ArtworksTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 60; $i++) {
+        for ($i=0; $i < 80; $i++) {
             $new_artwork = new Artwork();
             $new_artwork->name = $faker->sentence();
             $new_artwork->date = $faker->date();
