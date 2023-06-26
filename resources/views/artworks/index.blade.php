@@ -5,7 +5,7 @@
 <main>
     <h2 class="text-center my-4">Lista Opere d'Arte</h2>
 
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
         <table class="table table-dark w-75">
             <thead>
                 <tr>
@@ -52,6 +52,11 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div>
+          {{ $artworks->links() }}
+        </div>
+
     </div>
 </main>
 

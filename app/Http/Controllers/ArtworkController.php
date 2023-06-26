@@ -14,7 +14,10 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        $artworks = Artwork::all();
+        // $artworks = Artwork::all();
+
+        $artworks = Artwork::paginate(10);
+
         return view('artworks.index', compact('artworks'));
     }
 
@@ -25,7 +28,7 @@ class ArtworkController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

@@ -8,7 +8,7 @@
           <div class="alert alert-warning text-center">{{ session('deleted') }}</div>
         @endif
 
-        <div class="container d-flex justify-content-center">
+        <div class="container d-flex flex-column align-items-center justify-content-center">
             <table class="table table-dark">
                 <thead>
                     <tr>
@@ -49,6 +49,11 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <div>
+              {{ $artists->links() }}
+            </div>
+
         </div>
 
     </main>
